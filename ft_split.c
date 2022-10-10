@@ -1,85 +1,62 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 13:10:30 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/09 13:28:26 by aamhamdi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "libft.h"
+#include <string.h>
 #include<stdlib.h>
 #include<stdio.h>
-#include<string.h>
-#include "libft.h"
 
-int get_tabs_sum(const char *s1, char sep)
+int sum(const char *s1 , char c)
 {
-	int size = 1;
-	int i = 0;
-	while(s1[i])
-	{
-		if(s1[i] != sep && s1[i+1] == sep)
-			size++;
-		i++;
-	}
-	return size;
+    int i = 0;
+    int size = 0;
+    int s = 0;
+
+    s = strlen(s1)+1;
+    while(i < s)
+    {
+        if((s1[i] == c || s1[i] == '\0') && s1[i-1] != c)
+        {
+            size++;
+        }
+        i++;
+    }
+    return size;
 }
 
 char **ft_split(char const *s, char c)
 {
-	char **tabs;
-	char *tab;
-	char *sub_tab;
-	int last_index = 0;
-	int i = 0;
+    char **strs;
+    size_t i = 0;
+	int j = 0;
 	int n = 0;
-	int j;
-	int k = 0;
+    int prev = 0;
 
-	tab = ft_strtrim(s , " ");
-	tabs = (char **)malloc(sizeof(char*) * get_tabs_sum(tab , c));
-	if(!tabs)
-		return 0;
-	while(i < ft_strlen(tab)+1)
-	{	
-		if((tab[i] == c || tab[i] == '\0') && tab[i-1] != c )
-	 	{
-			k=i;
-			while(tab[i+1] == ' ')
-			{
-				i++;
-			}
-	 		j = 0;
-	 		sub_tab = ft_substr(tab , last_index , k-1);
-	 		tabs[n] = malloc(sizeof(char) * ft_strlen(sub_tab));
-	 		while(sub_tab[j])
-	 		{
-	 			tabs[n][j] = sub_tab[j];
-	 			j++;
-	 		}
-			tabs[n][j] = '\0';
-	 		n++;
-			last_index = i+1;
-	 	}
-		i++;
-	}
-	return tabs;
-}
+	s = ft_strtrim(s, &c);
+    printf("%c--" , s[0]); 
+    strs = (char **)malloc(sizeof(char *) * sum(s , c) + 1);
+    while(i < ft_strlen(s)+1)
+    {
+        if(s[i] == c || s[i] == '\0')
+        {
+            j = 0;
+            strs[n] = malloc(sizeof(char) * (i-prev));
+            if (!strs[n])
+                return (0);            
+            char *x = ft_substr(s+prev , 0 , sizeof(char)*(i-prev));
+            while(x[j])
+            {
+                strs[n][j] = x[j];
+                j++;
+            }
+            strs[n][j] = '\0';
+            
+            while(s[i] == c)
+                i++;
+            prev = i;
+            n++;
+            printf("%s\n" , strs[n]);
+        }
+        i++;
+    }
+    strs[n] = 0;
 
-int main()
-{
-	char **tabs;
-	char tab[] = " x  hello     world! hey      there  d     ";
-	tabs = ft_split(tab , ' ');
-	int i = 0;
-	int x = get_tabs_sum(ft_strtrim(tab , " "), ' ');
-	while(i < x)
-	{
-		printf("%s\n" , tabs[i]);
-		i++;
-	}
-	return 0;
+    return(strs);
 }

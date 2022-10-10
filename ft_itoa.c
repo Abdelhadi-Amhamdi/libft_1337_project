@@ -1,42 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 22:41:34 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/10 12:59:47 by aamhamdi         ###   ########.fr       */
+/*   Created: 2022/10/09 14:25:21 by aamhamdi          #+#    #+#             */
+/*   Updated: 2022/10/09 20:34:23 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
-#include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	size_calc(int c)
+{
+	int	size;
+
+	if (c < 0)
+		size = 1;
+	else
+		size = 0;
+	while (c)
+	{
+		size++;
+		c = c / 10;
+	}
+	return (size);
+}
+
+char	*ft_itoa(int nb)
 {
 	char	*p;
-	size_t	i;
-	size_t	j;
-	size_t	size;
+	int		x;
+	int		s ;
+	long	n;
 
-	size = ft_strlen(s1) + ft_strlen(s2);
-	i = 0;
-	j = 0;
-	p = (char *)malloc(sizeof(char) * size);
+	n = nb;
+	if (n == 0)
+		s = 2;
+	else
+		s = size_calc(n);
+	p = malloc(sizeof(char) * s);
 	if (!p)
 		return (0);
-	while (i < size && s1[i])
+	if (n == 0)
 	{
-		p[i] = s1[i];
-		i++;
+		p[0] = '0';
+		p[1] = '\0';
+		return (p);
 	}
-	while (i < size && s2[j])
+	if (n < 0)
 	{
-		p[i] = s2[j];
-		j++;
-		i++;
+		p[0] = '-';
+		n = -n;
 	}
-	p[i] = '\0';
+	x = s;
+	while (n)
+	{
+		p[s - 1] = (n % 10) + 48;
+		n = n / 10;
+		s--;
+	}
+	p[x] = '\0';
 	return (p);
 }

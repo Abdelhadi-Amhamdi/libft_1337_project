@@ -6,13 +6,13 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:55:34 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/07 21:45:38 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/10 11:29:37 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_isprint(int n)
 {
-	if (n >= 32 && n <= 127)
+	if (n >= 32 && n < 127)
 		return (1);
 	return (0);
 }

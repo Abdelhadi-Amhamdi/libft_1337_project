@@ -6,63 +6,67 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/09 11:19:22 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:53:19 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int ft(const char *s, char *set, int index , char type)
+int	ft(const char *s, char *set, int index, char type)
 {
-    int i = index;
-    int n;
-    int k = 0;
+	int	i;
+	int	n;
+	int	k;
 
-    while (s[i])
-    {
-        n = 0;
-        while (set[n])
-        {
-            if (s[i] == set[n])
-            {
-                if(type == 'i')
-                    i++;
-                else if(type == 'd')
-                    i--;
-                break;
-            }
-            n++;
-        }
-        if (set[n] == '\0')
-            k = 1;
-        if (k == 1)
-            break;
-    }
-    return i;
+	i = index;
+	k = 0;
+	while (s[i])
+	{
+		n = 0;
+		while (set[n])
+		{
+			if (s[i] == set[n])
+			{
+				if (type == 'i')
+					i++;
+				else if (type == 'd')
+					i--;
+				break ;
+			}
+			n++;
+		}
+		if (set[n] == '\0')
+			k = 1;
+		if (k == 1)
+			break ;
+	}
+	return (i);
 }
 
-char *ft_strtrim(char const *s1, char *set)
+char	*ft_strtrim(char const *s1, char *set)
 {
-    char *p;
-    int i = 0;
-   
-    int first_char;
-    int last_char;
+	char	*p;
+	int		i;
+	int		first_char;
+	int		last_char;
 
-    p = malloc(sizeof(char) * 10);
-
-    first_char = ft(s1, set, i, 'i');
-
-    last_char = ft(s1, set, ft_strlen(s1)-1, 'd');
-
-    while (first_char <= last_char)
-    {
-        p[i] = s1[first_char];
-        first_char++;
-        i++;
-    }
-    p[i] = '\0';
-    return p;
+	i = 0;
+	first_char = ft(s1, set, i, 'i');
+	last_char = ft(s1, set, ft_strlen(s1) - 1, 'd');
+	if(last_char == -1)
+	{
+		p = malloc(sizeof(char));
+		p[0] = '\0';
+		return p;
+	}
+	p = malloc(sizeof(char) * (last_char-first_char)+1);
+	while (first_char <= last_char)
+	{
+		p[i] = s1[first_char];
+		first_char++;
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
-
