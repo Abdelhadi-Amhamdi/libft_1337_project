@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/10 22:53:19 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:22:55 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ int	ft(const char *s, char *set, int index, char type)
 {
 	int	i;
 	int	n;
-	int	k;
 
 	i = index;
-	k = 0;
 	while (s[i])
 	{
 		n = 0;
@@ -37,8 +35,6 @@ int	ft(const char *s, char *set, int index, char type)
 			n++;
 		}
 		if (set[n] == '\0')
-			k = 1;
-		if (k == 1)
 			break ;
 	}
 	return (i);
@@ -54,13 +50,13 @@ char	*ft_strtrim(char const *s1, char *set)
 	i = 0;
 	first_char = ft(s1, set, i, 'i');
 	last_char = ft(s1, set, ft_strlen(s1) - 1, 'd');
-	if(last_char == -1)
+	if (last_char == -1)
 	{
 		p = malloc(sizeof(char));
 		p[0] = '\0';
-		return p;
+		return (p);
 	}
-	p = malloc(sizeof(char) * (last_char-first_char)+1);
+	p = malloc(sizeof(char) * (last_char - first_char) + 1);
 	while (first_char <= last_char)
 	{
 		p[i] = s1[first_char];

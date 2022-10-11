@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aamhamdi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:21:23 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:38:11 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:32:27 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,3 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 }
 
 
-int main()
-{
-	char x[] = "hello world";
-	ft_striteri(x, &ft_test);
-	printf("%s" , x);
-	return 0;
-}
