@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/11 23:33:45 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:19:55 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@ int	sum(const char *s1, char c)
 	return (size);
 }
 
-char **null_table(char **s)
-{
-	s = malloc(sizeof(char *));
-	s[0] = 0;
-	return (s);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
@@ -50,9 +43,9 @@ char	**ft_split(char const *s, char c)
 	s = ft_strtrim(s, &c);
 	if (s[0] == 0)
 	{
-		// strs = malloc(sizeof(char *));
-		// strs[0] = 0;
-		return (null_table(strs));
+		strs = malloc(sizeof(char *));
+		strs[0] = 0;
+		return (strs);
 	}
 	strs = (char **)malloc(sizeof(char *) * sum(s, c) + 1);
 	while (i < ft_strlen(s) + 1)

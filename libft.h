@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:26:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/11 23:31:19 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/12 17:24:13 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include<stdio.h>
 # include<unistd.h>
 # include<stdlib.h>
+# include<fcntl.h>
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
