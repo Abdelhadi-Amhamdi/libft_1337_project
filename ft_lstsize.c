@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 21:59:08 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/14 00:30:26 by aamhamdi         ###   ########.fr       */
+/*   Created: 2022/10/13 18:05:06 by aamhamdi          #+#    #+#             */
+/*   Updated: 2022/10/13 22:55:46 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	*ft_memset(void *dest, int ch, size_t count)
+int ft_lstsize(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < count)
-	{
-		((unsigned char *)dest)[i] = ch;
-		i++;
-	}
-	return (dest);
+    int i = 1;
+    if(!lst)
+        return 0;
+    while(lst->next && i++)
+        lst = lst->next;
+    return i;
 }

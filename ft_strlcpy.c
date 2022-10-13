@@ -6,13 +6,13 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:04:37 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/09 22:35:00 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:04:17 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t length)
+size_t	ft_strlcpy(char *dest, const char *src, size_t length)
 {
 	size_t	i;
 	size_t	size;
@@ -29,3 +29,10 @@ size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t length)
 	dest[i] = '\0';
 	return (size);
 }
+
+// int main()
+// {
+// 	char dest[10];
+// 	ft_strlcpy(dest, "lorem", 15);
+// 	printf("%s" , dest);
+// }

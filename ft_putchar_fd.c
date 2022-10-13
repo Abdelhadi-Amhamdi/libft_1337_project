@@ -1,21 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/13 15:05:28 by aamhamdi          #+#    #+#             */
+/*   Updated: 2022/10/13 15:07:44 by aamhamdi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd ,&c , 1);
-}
-
-
-int main()
-{
-    //char x;
-
-
-    int fd = open("file.txt" , O_RDWR | O_CREAT);
-    printf("%d", fd);
-    ft_putchar_fd('c' , fd);
-    //fd = open("test.txt" , O_RDONLY , 0);
-    //read(fd , &x , 1);
-    //printf("%c\n" , x);
+	write(fd, &c, 1);
 }

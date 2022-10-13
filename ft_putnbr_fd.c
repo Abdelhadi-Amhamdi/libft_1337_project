@@ -1,21 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/13 12:26:09 by aamhamdi          #+#    #+#             */
+/*   Updated: 2022/10/13 15:14:17 by aamhamdi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<unistd.h>
 #include "libft.h"
 
-void ft_putnbr_fd(int x, int fd)
+void	ft_putnbr_fd(int x, int fd)
 {
-    long int n = x;
-    if(n < 0)
-    {
-        ft_putchar_fd('-', fd);
-        ft_putnbr_fd(-n , fd);
-    }
-    if(n > 9)
-    {
-        ft_putnbr_fd(n/10 , fd);
-        ft_putchar_fd((n%10)+48, fd);
-    }
-    else
-        ft_putchar_fd((n%10)+48, fd);
+	unsigned int	n;
 
+	n = x;
+	if (x < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -x;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
+	else
+		ft_putchar_fd((n % 10) + '0', fd);
 }
