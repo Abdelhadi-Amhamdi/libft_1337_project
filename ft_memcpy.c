@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:57:37 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/14 00:30:17 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:04:08 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dest, const void  *src, size_t n)
 
 	i = 0;
 	j = 0;
+	if(!dest || !src)
+		return dest;
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 21:58:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/16 02:07:52 by aamhamdi         ###   ########.fr       */
+/*   Created: 2022/10/14 16:46:32 by aamhamdi          #+#    #+#             */
+/*   Updated: 2022/10/16 00:59:11 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+t_list *ft_lstmap(t_list *lst, void *(*ft)(void *), void(*del)(void *))
 {
-	size_t	i;
+    t_list *new;
+    t_list *new_list;
 
-	i = 0;
-	if (dest < src)
-		ft_memcpy(dest, src, len);
-	else
-	{
-		while (i < len--)
-			((char *)dest)[len] = ((char *)src)[len];
-	}	
-	return (dest);
+    (void)del;
+    new_list = 0;
+    while(lst)
+    {
+        new = ft_lstnew(ft(lst->content));
+        ft_lstadd_back(&new_list , new);
+        lst = lst->next;
+    }
+    return new_list;
 }
