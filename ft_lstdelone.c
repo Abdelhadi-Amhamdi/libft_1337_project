@@ -6,20 +6,17 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:55:29 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/14 12:58:59 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:53:45 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void del(t_list *node)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    free(node->content);
-}
-
-
-void ft_lstdelone(t_list *lst, void (*del)(void*))
-{
-    del(lst);
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

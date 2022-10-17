@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/12 18:19:55 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:56:57 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@ int	sum(const char *s1, char c)
 {
 	int	i;
 	int	size;
-	int	s;
 
 	i = 0;
 	size = 0;
-	s = (int)ft_strlen(s1) + 1;
-	while (i < s)
+	while (s1[i])
 	{
-		if ((s1[i] == c || s1[i] == '\0') && s1[i - 1] != c && i != 0)
+		if (s1[i] == c || s1[i + 1] == '\0')
 			size++;
 		i++;
 	}
@@ -40,15 +38,13 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	n = 0;
 	prev = 0;
+	if (!s)
+		return (0);
 	s = ft_strtrim(s, &c);
-	if (s[0] == 0)
-	{
-		strs = malloc(sizeof(char *));
-		strs[0] = 0;
-		return (strs);
-	}
-	strs = (char **)malloc(sizeof(char *) * sum(s, c) + 1);
-	while (i < ft_strlen(s) + 1)
+	strs = (char **)malloc((sum(s, c) + 1) * sizeof(char *));
+	if (!strs)
+		return (0);
+	while (i < ft_strlen(s)+1)
 	{
 		if (s[i] == c || s[i] == '\0')
 		{
@@ -62,3 +58,15 @@ char	**ft_split(char const *s, char c)
 	strs[n] = 0;
 	return (strs);
 }
+
+// int main()
+// {
+// 	char *s = "split       this for   me  !";
+// 	int i = 0;
+// 	char **result = ft_split(s, ' ');
+// 	while(i < 5)
+// 	{
+// 		printf("%s\n" , result[i]);
+// 		i++;
+// 	}
+// }

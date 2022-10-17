@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:15:00 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/13 15:15:45 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:56:01 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	size;
 
-	size = ft_strlen(s);
-	write(fd, s, size);
+	if (s)
+	{
+		size = ft_strlen(s);
+		write(fd, s, size);
+	}
 }

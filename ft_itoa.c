@@ -6,61 +6,48 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:25:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/11 15:43:05 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/16 22:39:06 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 int	size_calc(int c)
 {
 	int	size;
 
+	size = 0;
 	if (c < 0)
-		size = 1;
-	else
-		size = 0;
-	while (c)
-	{
-		size++;
+		size += 1;
+	while (c && ++size)
 		c = c / 10;
-	}
 	return (size);
 }
 
 char	*ft_itoa(int nb)
 {
 	char	*p;
-	int		x;
 	int		s ;
 	long	n;
 
 	n = nb;
 	if (n == 0)
-		s = 2;
-	else
-		s = size_calc(n);
-	p = malloc(sizeof(char) * s);
+		return (ft_strdup("0"));
+	s = size_calc(n);
+	p = malloc(sizeof(char) * s + 1);
 	if (!p)
 		return (0);
-	if (n == 0)
-	{
-		p[0] = '0';
-		p[1] = '\0';
-		return (p);
-	}
+	p[s] = '\0';
 	if (n < 0)
 	{
 		p[0] = '-';
 		n = -n;
 	}
-	x = s;
 	while (n)
 	{
 		p[s - 1] = (n % 10) + 48;
 		n = n / 10;
 		s--;
 	}
-	p[x] = '\0';
 	return (p);
 }

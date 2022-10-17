@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:01:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/11 19:02:22 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:59:17 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t len)
 	size_t	src_size ;
 
 	i = 0;
+	if (!dest && len == 0)
+		return (0);
 	dest_size = ft_strlen(dest);
 	src_size = ft_strlen(src);
 	if (len <= dest_size || len == 0)

@@ -16,7 +16,7 @@ bonus : $(BONUS_OBJS)
 	ar rc libft.a $(BONUS_OBJS)
 
 clean :
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
 	rm -rf libft.a

@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:23:55 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/07 21:43:00 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/16 03:42:07 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
-	{
 		return (1);
-	}
 	return (0);
 }

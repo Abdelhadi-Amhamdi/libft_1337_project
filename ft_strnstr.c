@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:38:02 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/09 22:20:44 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:26:57 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
+	if (src == to_find || len == 0)
+		return ((char *)src);
 	while (i < len)
 	{
 		j = 0;
