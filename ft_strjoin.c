@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:41:34 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/17 04:57:22 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:56:09 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 		i++;
 	}
-	p[i] = 0;
+	p[i] = '\0';
 	return (p);
 }

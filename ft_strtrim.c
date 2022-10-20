@@ -6,14 +6,14 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/17 04:58:32 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/19 00:16:04 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft(const char *s, char *set, int index, char type)
+int	ft(const char *s, const char *set, int index, char type)
 {
 	int	i;
 	int	n;
@@ -40,7 +40,8 @@ int	ft(const char *s, char *set, int index, char type)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char *set)
+
+char *ft_strtrim(char const *s1, char const *set)
 {
 	char	*p;
 	int		i;

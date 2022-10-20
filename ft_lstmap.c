@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:46:32 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/17 04:54:54 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:35:34 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*ft)(void *), void(*del)(void *))
 		new = ft_lstnew(ft(lst->content));
 		if (!new)
 		{
-			ft_lstclear(&lst, &del);
+			ft_lstclear(&lst, del);
 			return (0);
 		}
 		ft_lstadd_back(&new_list, new);

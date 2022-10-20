@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:59:52 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/10 12:59:01 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/19 00:48:17 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	size = ft_strlen(s) + 1;
 	while (i < size)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)s + i);
 		i++;
 	}

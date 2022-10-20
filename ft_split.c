@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/17 04:56:57 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:55:42 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,52 +21,70 @@ int	sum(const char *s1, char c)
 	size = 0;
 	while (s1[i])
 	{
-		if (s1[i] == c || s1[i + 1] == '\0')
+		if ((s1[i] == c && s1[i-1] != c) || s1[i + 1] == '\0')
 			size++;
 		i++;
 	}
+	if (size == 0)
+		size++;
 	return (size);
+}
+
+void free_mem_all(char **tabs)
+{
+	int i = 0;
+	while(tabs[i])
+	{
+		free(tabs[i]);
+		tabs[i] = 0;
+		i++;
+	}
+	free(tabs);
+	tabs = 0;
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		prev;
-	size_t	i;
 	int		n;
+	size_t	i;
 
 	i = 0;
 	n = 0;
 	prev = 0;
+	
+	s = ft_strtrim(s, &c);
 	if (!s)
 		return (0);
-	s = ft_strtrim(s, &c);
 	strs = (char **)malloc((sum(s, c) + 1) * sizeof(char *));
 	if (!strs)
 		return (0);
-	while (i < ft_strlen(s)+1)
+	if (*s == 0)
+	{
+		strs[0] = 0;
+		free((char *)s);
+		return (strs);
+	}
+	while (i < ft_strlen(s) + 1)
 	{
 		if (s[i] == c || s[i] == '\0')
 		{
-			strs[n++] = ft_substr(s + prev, 0, sizeof(char) * (i - prev));
+			strs[n] = ft_substr(s + prev, 0, (i - prev));
+			if(!strs[n])
+			{
+				free_mem_all(strs);
+				return 0;
+			}
+			n++;
 			while (s[i] == c)
 				i++;
 			prev = i;
 		}
 		i++;
 	}
+	free((char *)s);
+	s = 0;
 	strs[n] = 0;
 	return (strs);
 }
-
-// int main()
-// {
-// 	char *s = "split       this for   me  !";
-// 	int i = 0;
-// 	char **result = ft_split(s, ' ');
-// 	while(i < 5)
-// 	{
-// 		printf("%s\n" , result[i]);
-// 		i++;
-// 	}
-// }
