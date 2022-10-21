@@ -4,10 +4,13 @@ OBJS = $(SRCS:.c=.o)
 BONUS_SRCS = ft_lstiter.c ft_lstclear.c ft_lstdelone.c ft_lstadd_back.c ft_lstlast.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstmap.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: libft.a
+NAME = libft.a
+C_FLAGS = -Wall -Wextra -Werror
 
-%.o: %.c
-	gcc -Wall -Wextra -Werror -c $*.c -I./ -o $*.o
+all: $(NAME)
+
+%.o: %.c libft.h
+	cc $(C_FLAGS) -c $<
 
 libft.a : $(OBJS)
 	ar rc libft.a $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:41:34 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/17 18:56:09 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 00:10:57 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	while (i < size && s2[j])
-	{
-		p[i] = s2[j];
-		j++;
-		i++;
-	}
+		p[i++] = s2[j++];
 	p[i] = '\0';
 	return (p);
 }
