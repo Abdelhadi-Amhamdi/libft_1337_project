@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 15:45:07 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:53:36 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,16 @@ char	**ft_split(char const *s, char c)
 	strs[n] = 0;
 	free((char *)s);
 	return (strs);
+}
+
+int main()
+{
+	char x[] = "     hello world     hhhh hh hh hh       j j'lqsflkj lkdf        ";
+	char **tabs;
+	tabs = ft_split(x , ' ');
+	while(*tabs)
+	{
+		printf("%s\n" , *tabs);
+		tabs++;
+	}
 }
