@@ -6,13 +6,13 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:25:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/18 22:03:53 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:48:55 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	size_calc(int c)
+static int	size_calc(int c)
 {
 	int	size;
 

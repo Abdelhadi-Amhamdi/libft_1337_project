@@ -6,13 +6,13 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 18:53:36 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:34:48 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	sum(const char *s1, char c)
+static int	sum(const char *s1, char c)
 {
 	int	i;
 	int	size;
@@ -30,7 +30,7 @@ int	sum(const char *s1, char c)
 	return (size);
 }
 
-void	free_mem_all(char **tabs)
+static void	free_mem_all(char **tabs)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ void	free_mem_all(char **tabs)
 	free(tabs);
 }
 
-void	split_words(const char *s, char c, char **strs, int *n)
+static void	split_words(const char *s, char c, char **strs, int *n)
 {
 	int		prv;
 	int		i;
@@ -88,16 +88,4 @@ char	**ft_split(char const *s, char c)
 	strs[n] = 0;
 	free((char *)s);
 	return (strs);
-}
-
-int main()
-{
-	char x[] = "     hello world     hhhh hh hh hh       j j'lqsflkj lkdf        ";
-	char **tabs;
-	tabs = ft_split(x , ' ');
-	while(*tabs)
-	{
-		printf("%s\n" , *tabs);
-		tabs++;
-	}
 }

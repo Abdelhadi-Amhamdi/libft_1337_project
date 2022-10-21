@@ -6,14 +6,14 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 00:15:30 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:56:46 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft(const char *s, const char *set, int index, char type)
+static int	trim(const char *s, const char *set, int index, char type)
 {
 	int	i;
 	int	n;
@@ -50,8 +50,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (!s1 || !set)
 		return (0);
-	first_char = ft(s1, set, i, 'i');
-	last_char = ft(s1, set, ft_strlen(s1) - 1, 'd');
+	first_char = trim(s1, set, i, 'i');
+	last_char = trim(s1, set, ft_strlen(s1) - 1, 'd');
 	if (last_char == -1)
 		return (ft_strdup("\0"));
 	p = ft_substr(s1, first_char, (last_char - first_char + 1));

@@ -6,20 +6,20 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:18:18 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/20 22:18:32 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:59:06 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_if_overflow(long prev, long res)
+static int	check_if_overflow(long prev, long res)
 {
 	if (res / 10 == prev)
 		return (0);
 	return (1);
 }
 
-char	*trim_white_space(const char *s, int *sign)
+static char	*trim_white_space(const char *s, int *sign)
 {
 	while ((*s >= 9 && *s <= 13) || *s == 32)
 		s++;
@@ -55,15 +55,3 @@ int	ft_atoi(const char *s)
 	}
 	return (result * sign);
 }
-
-// int main()
-// {
-// 	char n[40] = "    -123";
-// 	int i1 = atoi(n);
-// 	int i2 = ft_atoi(n);
-
-// 	printf("%d\n", i1);
-// 	printf("%d", i2);
-
-// 	return 0;
-// }
