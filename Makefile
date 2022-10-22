@@ -12,7 +12,7 @@ all: $(NAME)
 %.o: %.c libft.h
 	cc $(C_FLAGS) -c $< 
 
-libft.a : $(OBJS)
+$(NAME) : $(OBJS)
 	ar rc libft.a $(OBJS)
 
 bonus : $(BONUS_OBJS)
@@ -22,6 +22,6 @@ clean :
 	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
-	rm -rf libft.a
+	rm -rf $(NAME)
 
 re : fclean all

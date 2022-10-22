@@ -6,14 +6,13 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 21:56:46 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:40:50 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static int	trim(const char *s, const char *set, int index, char type)
+static int	m_trim(const char *s, const char *set, int index, char type)
 {
 	int	i;
 	int	n;
@@ -42,7 +41,6 @@ static int	trim(const char *s, const char *set, int index, char type)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
 	int		i;
 	int		first_char;
 	int		last_char;
@@ -50,10 +48,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (!s1 || !set)
 		return (0);
-	first_char = trim(s1, set, i, 'i');
-	last_char = trim(s1, set, ft_strlen(s1) - 1, 'd');
+	first_char = m_trim(s1, set, i, 'i');
+	last_char = m_trim(s1, set, ft_strlen(s1) - 1, 'd');
 	if (last_char == -1)
 		return (ft_strdup("\0"));
-	p = ft_substr(s1, first_char, (last_char - first_char + 1));
-	return (p);
+	return (ft_substr(s1, first_char, (last_char - first_char + 1)));
 }

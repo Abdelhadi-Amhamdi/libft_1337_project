@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:18:18 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 21:59:06 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:40:19 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	check_if_overflow(long prev, long res)
 	return (1);
 }
 
-static char	*trim_white_space(const char *s, int *sign)
+static const char	*trim_white_space(const char *s, int *sign)
 {
 	while ((*s >= 9 && *s <= 13) || *s == 32)
 		s++;
@@ -29,7 +29,7 @@ static char	*trim_white_space(const char *s, int *sign)
 			*sign = -1;
 		s++;
 	}
-	return ((char *)s);
+	return (s);
 }
 
 int	ft_atoi(const char *s)

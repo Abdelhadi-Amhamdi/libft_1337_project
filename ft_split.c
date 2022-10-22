@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 22:34:48 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:32:48 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	sum(const char *s1, char c)
 	return (size);
 }
 
-static void	free_mem_all(char **tabs)
+static void	free_all(char **tabs)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ static void	split_words(const char *s, char c, char **strs, int *n)
 		{
 			strs[*n] = ft_substr(s + prv, 0, (i - prv));
 			if (!strs[*n])
-				free_mem_all(strs);
+				free_all(strs);
 			while (s[i] == c)
 				i++;
 			prv = i;
