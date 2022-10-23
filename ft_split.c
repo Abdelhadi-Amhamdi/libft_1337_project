@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:32:48 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:06:14 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ static void	free_all(char **tabs)
 static void	split_words(const char *s, char c, char **strs, int *n)
 {
 	int		prv;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	prv = 0;
-	while (i < (int)ft_strlen(s) + 1)
+	while (i < ft_strlen(s) + 1)
 	{
 		if (s[i] == c || s[i] == '\0')
 		{

@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:02:47 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/16 09:03:29 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:36:55 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
+	if (*lst)
+		new->next = *lst;
 	*lst = new;
 }
