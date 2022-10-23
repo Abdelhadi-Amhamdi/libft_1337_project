@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:00:26 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/18 21:43:22 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:39:11 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	int		tab_size;
 	int		i;
 	char	*p;
-
+	
 	tab_size = ft_strlen(s1);
 	p = malloc(sizeof(char) * tab_size + 1);
 	if (!p)

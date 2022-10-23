@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:26:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/21 21:40:50 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 22:58:28 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include<unistd.h>
 # include<stdlib.h>
 # include<fcntl.h>
+# include<libc.h>
 
 typedef struct s_list
 {

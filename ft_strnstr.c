@@ -6,11 +6,12 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:38:02 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/22 15:07:18 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:32:25 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <libc.h>
 
 char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 {
@@ -18,19 +19,24 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 	size_t	j;
 
 	i = 0;
-	if ((!src && len == 0) || (!*src && src != to_find))
-		return (0);
-	if (src == to_find || (len == 0 && !*to_find))
-		return ((char *)src);
-	while (i < len)
+	if(!*to_find)
+		return((char *)src);
+	if(!src && len == 0)
+		return 0;
+	while (i < len && (int)len > 0)
 	{
 		j = 0;
-		while (src[i + j] == to_find[j] && (i + j) \
-		< len && src[i + j] && to_find[j])
+		while (src[i + j] == to_find[j] && (i + j) < len && src[i + j] && to_find[j])
 			j++;
 		if (to_find[j] == '\0')
 			return ((char *)src + i);
 		i++;
 	}
 	return (0);
+}
+
+int main()
+{
+	const char *str = (void *)0;
+	printf("%s" , ft_strnstr("", "coucou", -1));
 }

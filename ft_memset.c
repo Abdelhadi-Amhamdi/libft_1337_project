@@ -6,12 +6,11 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:59:08 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 11:30:02 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:28:44 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <libc.h>
 
 void	*ft_memset(void *dest, int ch, size_t count)
 {
@@ -25,3 +24,4 @@ void	*ft_memset(void *dest, int ch, size_t count)
 	}
 	return (dest);
 }
+

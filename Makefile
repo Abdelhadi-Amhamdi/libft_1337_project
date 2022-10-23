@@ -10,7 +10,7 @@ C_FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 %.o: %.c libft.h
-	cc $(C_FLAGS) -c $< 
+	cc $(C_FLAGS) -c $<
 
 $(NAME) : $(OBJS)
 	ar rc libft.a $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:58:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 11:37:46 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:19:28 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	i = 0;
 	if (!src && !dest)
 		return (0);
+	if(!*src)
+		return 0;
 	if (dest < src)
 		ft_memcpy(dest, src, len);
 	else
