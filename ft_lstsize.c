@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:05:06 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 11:36:41 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:33:28 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	if (!lst)
 		return (0);
-	while (lst->next)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;

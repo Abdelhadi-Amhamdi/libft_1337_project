@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:39:55 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 19:28:56 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:40:14 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	while (lst && f)
 	{
 		f(lst->content);
 		lst = lst->next;

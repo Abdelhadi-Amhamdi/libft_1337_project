@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:01:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 23:55:43 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:24:32 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i + dest_size] = '\0';
 	return (src_size + dest_size);
-}
-
-int main()
-{
-	char a[30] = "hello";
-	const char b[10] = "world";
-	printf("%zu\n" , strlcat(a, b , 10));
 }

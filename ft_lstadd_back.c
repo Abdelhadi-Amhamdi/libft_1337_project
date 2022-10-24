@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:54:31 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/16 09:02:11 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:19:16 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		t->next = new;
 	}
 	else
-		*lst = new;
+		ft_lstadd_front(lst, new);
 }
