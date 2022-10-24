@@ -6,11 +6,10 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:59:52 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 23:37:00 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:37:48 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

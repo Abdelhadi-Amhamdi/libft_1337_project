@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:06:58 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/24 11:24:29 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:42:14 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = size;
 	if (start >= ft_strlen(s) || len == 0)
 		return (ft_strdup("\0"));
-	p = malloc(sizeof(char) * (len + 1));
+	p = malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (0);
 	while (i < len)

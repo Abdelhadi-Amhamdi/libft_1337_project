@@ -6,16 +6,12 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:26:21 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/23 22:58:28 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:35:57 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include<stdio.h>
-# include<unistd.h>
-# include<stdlib.h>
-# include<fcntl.h>
 # include<libc.h>
 
 typedef struct s_list
