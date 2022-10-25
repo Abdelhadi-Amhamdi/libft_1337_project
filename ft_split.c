@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/24 13:50:42 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/25 09:56:57 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	**ft_split(char const *s, char c)
 	int		n;
 
 	n = 0;
+	if (!s)
+		return (0);
 	s = ft_strtrim(s, &c);
 	if (!s)
 		return (0);
@@ -85,7 +87,7 @@ char	**ft_split(char const *s, char c)
 		return (strs);
 	}
 	split_words(s, c, strs, &n);
-	strs[n] = 0;
+	strs[n] = NULL;
 	free((char *)s);
 	return (strs);
 }

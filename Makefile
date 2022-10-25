@@ -13,10 +13,10 @@ all: $(NAME)
 	cc $(C_FLAGS) -c $<
 
 $(NAME) : $(OBJS)
-	ar rc libft.a $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 bonus : $(BONUS_OBJS)
-	ar rc libft.a $(BONUS_OBJS)
+	ar rc $(NAME) $(BONUS_OBJS)
 
 clean :
 	rm -rf $(OBJS) $(BONUS_OBJS)
