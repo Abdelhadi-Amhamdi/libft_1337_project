@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:25:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/25 09:56:57 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:01:14 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,14 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		n;
+	char	set[2];
 
 	n = 0;
 	if (!s)
 		return (0);
-	s = ft_strtrim(s, &c);
+	set[0] = c;
+	set[1] = '\0';
+	s = ft_strtrim(s, set);
 	if (!s)
 		return (0);
 	strs = (char **)malloc((sum(s, c) + 1) * sizeof(char *));
