@@ -6,16 +6,16 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:31:59 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/26 21:31:59 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:42:00 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_tabs_sum(const char *src, char c)
+static size_t	get_tabs_sum(const char *src, char c)
 {
-	int	i;
-	int	size;
+	int		i;
+	size_t	size;
 
 	i = 0;
 	size = 0;
@@ -28,7 +28,7 @@ static int	get_tabs_sum(const char *src, char c)
 	return (size);
 }
 
-static char	**ft_free(char **tabs, int index)
+static char	**ft_free_all(char **tabs, int index)
 {
 	while (index >= 0)
 	{
@@ -42,8 +42,8 @@ static char	**ft_free(char **tabs, int index)
 char	**ft_split(const char *src, char c)
 {
 	char	**tabs;
-	size_t	i;
-	size_t	len;
+	int		i;
+	int		len;
 
 	if (!src)
 		return (NULL);
@@ -61,9 +61,9 @@ char	**ft_split(const char *src, char c)
 		if (len != 0)
 			tabs[i++] = ft_substr(src, 0, len);
 		if (len != 0 && !tabs[i - 1])
-			return (ft_free(tabs, i - 1));
+			return (ft_free_all(tabs, i - 1));
 		src += len;
 	}
-	tabs[i] = NULL;
+	tabs[i] = 0;
 	return (tabs);
 }
