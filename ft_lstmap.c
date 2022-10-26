@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:46:32 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/25 22:07:30 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:23:41 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*ft)(void *), void(*del)(void *))
 	t_list	*new_list;
 
 	new_list = 0;
-	while (lst->next && ft && del)
+	while (lst && ft && del)
 	{
 		new = ft_lstnew(ft(lst->content));
 		if (!new)

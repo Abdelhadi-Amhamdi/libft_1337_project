@@ -6,12 +6,11 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:38:02 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/24 12:26:05 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:21:03 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <libc.h>
 
 char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 {

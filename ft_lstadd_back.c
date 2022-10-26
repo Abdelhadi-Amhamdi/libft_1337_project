@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:54:31 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/24 12:19:16 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:13:18 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*t;
 
+	if (!lst)
+		return ;
 	if (*lst)
 	{
 		t = ft_lstlast(*lst);

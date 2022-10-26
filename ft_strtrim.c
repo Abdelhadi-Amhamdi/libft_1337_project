@@ -6,7 +6,7 @@
 /*   By: aamhamdi <aamhamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:14:33 by aamhamdi          #+#    #+#             */
-/*   Updated: 2022/10/25 16:59:37 by aamhamdi         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:22:09 by aamhamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,18 @@ static int	m_trim(const char *s, const char *set, int index, char type)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
+	int		index;
 	int		first_char;
 	int		last_char;
+	int		size;
 
-	i = 0;
 	if (!s1 || !set)
 		return (0);
-	first_char = m_trim(s1, set, i, 'i');
-	last_char = m_trim(s1, set, ft_strlen(s1) - 1, 'd');
-	if (last_char == -1)
+	index = 0;
+	size = (int)ft_strlen(s1);
+	first_char = m_trim(s1, set, index, 'i');
+	if (first_char == size)
 		return (ft_strdup("\0"));
+	last_char = m_trim(s1, set, size - 1, 'd');
 	return (ft_substr(s1, first_char, (last_char - first_char + 1)));
 }
